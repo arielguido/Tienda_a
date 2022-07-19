@@ -1,0 +1,10 @@
+com\Tienda\entity\Persona.class
+com\Tienda\repository\PersonaRepository.class
+com\Tienda\service\IPersonaService.class
+com\Tienda\controller\PersonaController.class
+com\Tienda\service\PaisService.class
+com\Tienda\service\PersonaService.class
+com\Tienda\entity\Pais.class
+com\Tienda\TiendaApplication.class
+com\Tienda\service\IPaisService.class
+com\Tienda\repository\PaisRepository.class

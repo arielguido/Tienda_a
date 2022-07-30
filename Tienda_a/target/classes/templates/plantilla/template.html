@@ -42,7 +42,7 @@
                         </ul>
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <button class="btn btn-outline-success" type="submit" th:text="#{accion.buscar}">Search</button>
                         </form>
                     </div>
                 </div>
@@ -53,9 +53,9 @@
         <div class="container"></div>
 
         <<!-- FOOTER -->
-        <footer th:fragment="footer" class="bg-dark text-white fixed-bottom px-5  mb-5">
+        <footer th:fragment="footer" class="bg-dark text-white fixed-bottom px-3">
             
-            <div>
+            <div class=" mb-3">
                 <p>Copyright Tienda &copy; 2022</p>
                 
                 <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"

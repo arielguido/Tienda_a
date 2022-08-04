@@ -1,0 +1,65 @@
+ /*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.Tienda.service;
+
+import com.Tienda.entity.Persona;
+import com.Tienda.repository.PersonaRepository;
+import java.awt.print.Pageable;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @author Usuario
+ */
+@Service
+public class PersonaService implements IPersonaService {
+
+    @Autowired
+    private PersonaRepository PersonaRepository; 
+    
+    @Override
+    public List<Persona> getAllPersona() {
+     return (List<Persona>)PersonaRepository.findAll();
+    }
+
+    @Override
+    public Persona getPersonaById(long id) {
+        return PersonaRepository.findById(id).orElse(null);
+        }
+
+    @Override
+    public void savePersona(Persona Persona) {
+       PersonaRepository.save(Persona);
+     }
+
+    @Override
+    public void delete(long id) {
+        PersonaRepository.deleteById(id);
+         }
+
+    @Override
+    public Persona findByNombre(String nombre) {
+        return PersonaRepository.findByNombre(nombre);
+    }
+
+    @Override
+	public List<Persona> findAll() {
+		return (List<Persona>) PersonaRepository.findAll();
+	}
+
+    @Override
+	public Page<Persona> findAll(Pageable Pageable) {
+		return (Page<Persona>) PersonaRepository.findAll();
+	}
+
+    
+    @Override
+	public Persona findOne(Long id) {
+		return PersonaRepository.findById(id).orElse(null);
+	}
+}
